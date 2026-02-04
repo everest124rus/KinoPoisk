@@ -1,0 +1,288 @@
+.movie-detail__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.movie-detail__container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 32px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px 0 rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.movie-detail__close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+.movie-detail__close:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(90deg);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.movie-detail__content {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2.5rem;
+  padding: 2.5rem;
+}
+
+.movie-detail__poster-wrapper {
+  position: sticky;
+  top: 2.5rem;
+  height: fit-content;
+}
+
+.movie-detail__poster {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.movie-detail__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.movie-detail__header {
+  display: flex;
+  align-items: flex-start;
+  padding-right: 3.5rem; /* Отступ для крестика, чтобы не пересекаться */
+}
+
+.movie-detail__title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.movie-detail__title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.2;
+  flex: 1;
+  min-width: 0; /* Позволяет title сжиматься */
+}
+
+.movie-detail__rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.75rem 1.25rem;
+  border-radius: 20px;
+  color: #ffd700;
+  font-weight: 600;
+  font-size: 1.125rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  white-space: nowrap;
+}
+
+.movie-detail__rating svg {
+  width: 22px;
+  height: 22px;
+}
+
+.movie-detail__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.movie-detail__meta-item {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 1rem;
+}
+
+.movie-detail__meta-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
+
+.movie-detail__meta-value {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+}
+
+.movie-detail__genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.movie-detail__genre {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.5rem 1rem;
+  border-radius: 16px;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease;
+}
+
+.movie-detail__genre:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.movie-detail__section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.movie-detail__section-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.movie-detail__description {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.movie-detail__actors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.movie-detail__actor {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.625rem 1.125rem;
+  border-radius: 16px;
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.2s ease;
+}
+
+.movie-detail__actor:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-detail__overlay {
+    padding: 1rem;
+  }
+
+  .movie-detail__container {
+    border-radius: 24px;
+    max-height: 95vh;
+  }
+
+  .movie-detail__content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .movie-detail__poster-wrapper {
+    position: static;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .movie-detail__header {
+    padding-right: 3rem; /* Меньший отступ на мобильных */
+  }
+
+  .movie-detail__title-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .movie-detail__title {
+    font-size: 1.75rem;
+  }
+
+  .movie-detail__close {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-detail__content {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .movie-detail__title {
+    font-size: 1.5rem;
+  }
+
+  .movie-detail__poster-wrapper {
+    max-width: 200px;
+  }
+}
+
